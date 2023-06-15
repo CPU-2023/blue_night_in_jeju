@@ -1,0 +1,16 @@
+﻿  game.c
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(17,1): warning C4005: 'LEFT': 매크로 재정의
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(9): message : 'LEFT'의 이전 정의를 참조하십시오.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(18,1): warning C4005: 'RIGHT': 매크로 재정의
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(10): message : 'RIGHT'의 이전 정의를 참조하십시오.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(19,1): warning C4005: 'UP': 매크로 재정의
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(7): message : 'UP'의 이전 정의를 참조하십시오.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(20,1): warning C4005: 'DOWN': 매크로 재정의
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.h(8): message : 'DOWN'의 이전 정의를 참조하십시오.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.c(6,17): warning C4013: '_getch'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.c(39,28): warning C4566: 유니버설 문자 이름 '\uFF64'(으)로 표현되는 문자는 현재 코드 페이지(949)에서 표현할 수 없습니다.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.c(363,17): warning C4098: 'delItemFromList': 'void' 함수에서 값을 반환하고 있습니다.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.c(450,25): warning C4013: 'time'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.c(463,13): warning C4013: '_kbhit'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\LG\Desktop\Test\blue_night_in_jeju\game.c(23): warning C4715: 'keyControl': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  blue_night_in_jeju.vcxproj -> C:\Users\LG\Desktop\Test\blue_night_in_jeju\x64\Debug\blue_night_in_jeju.exe

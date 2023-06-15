@@ -3,39 +3,28 @@
 #ifndef KEY_CODE
 #define KEY_CODE
 
-//Å°º¸µå °ª
+//í‚¤ë³´ë“œ ê°’
 #define UP 0
 #define DOWN 1
 #define LEFT 2
 #define RIGHT 3
-#define SUBMIT 13
+#define SUBMIT 4
 
 
 #endif
-#define FIELD_WIDTH 50   //ÇÊµå°¡·Î±æÀÌ
-#define FIELD_HEIGHT 25   //ÇÊµå¼¼·Î±æÀÌ
-#define LEFT 75         //Å°º¸µå ÁÂ È­»ìÇ¥ÀÇ char°ª
-#define RIGHT 77      //Å°º¸µå ¿ì
-#define UP 72         //Å°º¸µå À§
-#define DOWN 80         //Áöº¸µå ¾Æ·¡
-#define ITEM_MAX 2      //È­¸é¿¡ Ç¥½ÃµÇ´Â ¾ÆÀÌÅÛ°³¼ö
-#define ITEM_GOLD 101   //°ñµå ¾ÆÀÌÅÛ ÀÎµğÄÉÀÌÅÍ
-#define ITEM_EXP 102   //°æÇèÄ¡ ¾ÆÀÌÅÛ ÀÎµğÄÉÀÌÅÍ
-#define LEFT_MARGIN 30   //È­¸é¿ŞÂÊ¸¶Áø(°ø¹é)
-#define TOP_MARGIN 3   //È­¸é »ó´Ü¸¶Áø(°ø¹é)
-#define DELAYTIME 200   //SleepÇÔ¼ö¿¡ µé¾î°¥ x/1000 ÃÊ
-
-void gotoxy(int x, int y) {
-    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
-    COORD pos;
-    pos.X = x;
-    pos.Y = y;
-    SetConsoleCursorPosition(consoleHandle, pos);
-}
-
-void textcolor(int colorNum) {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorNum);
-}
+#define FIELD_WIDTH 50   //í•„ë“œê°€ë¡œê¸¸ì´
+#define FIELD_HEIGHT 25   //í•„ë“œì„¸ë¡œê¸¸ì´
+#define LEFT 75         //í‚¤ë³´ë“œ ì¢Œ í™”ì‚´í‘œì˜ charê°’
+#define RIGHT 77      //í‚¤ë³´ë“œ ìš°
+#define UP 72         //í‚¤ë³´ë“œ ìœ„
+#define DOWN 80         //ì§€ë³´ë“œ ì•„ë˜
+#define ENTER 13			//ENTER 
+#define ITEM_MAX 2      //í™”ë©´ì— í‘œì‹œë˜ëŠ” ì•„ì´í…œê°œìˆ˜
+#define ITEM_GOLD 101   //ê³¨ë“œ ì•„ì´í…œ ì¸ë””ì¼€ì´í„°
+#define ITEM_EXP 102   //ê²½í—˜ì¹˜ ì•„ì´í…œ ì¸ë””ì¼€ì´í„°
+#define LEFT_MARGIN 30   //í™”ë©´ì™¼ìª½ë§ˆì§„(ê³µë°±)
+#define TOP_MARGIN 3   //í™”ë©´ ìƒë‹¨ë§ˆì§„(ê³µë°±)
+#define DELAYTIME 200   //Sleepí•¨ìˆ˜ì— ë“¤ì–´ê°ˆ x/1000 ì´ˆ
 
 int keyControl();
 void titleDraw();
@@ -43,19 +32,43 @@ void init();
 void infoDraw();
 int menuDraw();
 void gotoxy(int x, int y);
+void textcolor(int colorNum) {
+	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), colorNum);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+enum ColorType {
+	BLACK,  	//0
+	darkBLUE,	//1
+	DarkGreen,	//2
+	darkSkyBlue,    //3
+	DarkRed,  	//4
+	DarkPurple,	//5
+	DarkYellow,	//6
+	GRAY,		//7
+	DarkGray,	//8
+	BLUE,		//9
+	GREEN,		//10
+	SkyBlue,	//11
+	RED,		//12
+	PURPLE,		//13
+	YELLOW,		//14
+	WHITE,//15
+	black,
+	blue,
+	green,
+	cyan,
+	red,
+	purple,
+	brown,
+	lightgray,
+	darkgray,
+	lightblue,
+	lightgreen,
+	lightcyan,
+	lightred,
+	lightpurple,
+	yellow,
+	white
+} COLOR;
 
 

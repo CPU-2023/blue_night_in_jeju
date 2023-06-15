@@ -4,15 +4,18 @@
 int main() {
 	init();
 	while (1) {
+		
+		PlaySound(TEXT("gamemusic.wav") , NULL, SND_ASYNC | SND_LOOP);	//ë°˜ë³µì¬ìƒ
+		
 		titleDraw();
 		int menuCode = menuDraw();
 		if (menuCode == 0) {
-			// °ÔÀÓ½ÃÀÛ
+			// Â°Ã”Ã€Ã“Â½ÃƒÃ€Ã›
 			start();
 
 		}
 		else if (menuCode == 1) {
-			// °ÔÀÓÁ¤º¸
+			// Â°Ã”Ã€Ã“ÃÂ¤ÂºÂ¸
 			infoDraw();
 		}
 		system("cls");

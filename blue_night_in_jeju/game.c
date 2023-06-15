@@ -1,7 +1,7 @@
-﻿#include "game.h"
+#include "game.h"
 
 
-//키 받아오기
+
 int keyControl() {
     char temp = _getch();
 
@@ -17,7 +17,7 @@ int keyControl() {
     else if (temp == 'd' || temp == 'D') {
         return RIGHT;
     }
-    else if (temp == ' ') {
+    else if (temp == ENTER) {
         return SUBMIT;
     }
 }
@@ -25,22 +25,22 @@ int keyControl() {
 void titleDraw() {
     int x = 17, y = 3;
 
-    textcolor(11);
-    gotoxy(x, y++); printf(" _______  ___      __   __  _______    __    _  ___   _______  __   __  _______    　　 ∧＿∧       "); 
-    gotoxy(x, y++); printf("|  _    ||   |    |  | |  ||       |  |  |  | ||   | |       ||  | |  ||       |       (´∀｀)     ");
-    gotoxy(x, y++); printf("| |_|   ||   |    |  | |  ||    ___|  |   |_| ||   | |    ___||  |_|  ||_     _|       (　つ　つ     ");
-    gotoxy(x, y++); printf("|       ||   |    |  |_|  ||   |___   |       ||   | |   | __ |       |  |   |         人　　Ｙ     ");
-    gotoxy(x, y++); printf("|  _   | |   |___ |       ||    ___|  |  _    ||   | |   ||  ||       |  |   |        (　 　)       ");
-    gotoxy(x, y++); printf("| |_|   ||       ||       ||   |___   | | |   ||   | |   |_| ||   _   |  |   |        人　 Ｙ        ");
-    gotoxy(x, y++); printf("|_______||_______||_______||_______|  |_|  |__||___| |_______||__| |__|  |___|        (　  )       ");
-    gotoxy(x, y++); printf("                                                                                      人　Ｙ         ");
-    gotoxy(x, y++); printf("		 ___   __    _        ___  _______      ___  __   __                  (　  )          ");
-    gotoxy(x, y++); printf("		|   | |  |  | |      |   ||       |    |   ||  | |  |                人　＼          ");
-    gotoxy(x, y++); printf("		|   | |   |_| |      |   ||    ___|    |   ||  | |  |               (＿)､＿)         ");
-    gotoxy(x, y++); printf("		|   | |       |      |   ||   |___     |   ||  |_|  |                               ");
-    gotoxy(x, y++); printf("		|   | |  _    |   ___|   ||    ___| ___|   ||       |                               ");
-    gotoxy(x, y++); printf("		|   | | | |   |  |       ||   |___ |       ||       |                               ");
-    gotoxy(x, y++); printf("		|___| |_|  |__|  |_______||_______||_______||_______|                               ");
+    textcolor(SkyBlue);
+    gotoxy(x, y++); printf(" _______  ___      __   __  _______    __    _  ___   _______  __   __  _______");
+    gotoxy(x, y++); printf("|  _    ||   |    |  | |  ||       |  |  |  | ||   | |       ||  | |  ||       |");
+    gotoxy(x, y++); printf("| |_|   ||   |    |  | |  ||    ___|  |   |_| ||   | |    ___||  |_|  ||_     _|");
+    gotoxy(x, y++); printf("|       ||   |    |  |_|  ||   |___   |       ||   | |   | __ |       |  |   |");
+    gotoxy(x, y++); printf("|  _   | |   |___ |       ||    ___|  |  _    ||   | |   ||  ||       |  |   |");
+    gotoxy(x, y++); printf("| |_|   ||       ||       ||   |___   | | |   ||   | |   |_| ||   _   |  |   | ");
+    gotoxy(x, y++); printf("|_______||_______||_______||_______|  |_|  |__||___| |_______||__| |__|  |___| ");
+
+    gotoxy(x, y++); printf("		 ___   __    _        ___  _______      ___  __   __             ");
+    gotoxy(x, y++); printf("		|   | |  |  | |      |   ||       |    |   ||  | |  |      ");
+    gotoxy(x, y++); printf("		|   | |   |_| |      |   ||    ___|    |   ||  | |  |          ");
+    gotoxy(x, y++); printf("		|   | |       |      |   ||   |___     |   ||  |_|  |       ");
+    gotoxy(x, y++); printf("		|   | |  _    |   ___|   ||    ___| ___|   ||       |     ");
+    gotoxy(x, y++); printf("		|   | | | |   |  |       ||   |___ |       ||       |     ");
+    gotoxy(x, y++); printf("		|___| |_|  |__|  |_______||_______||_______||_______|   ");
 
 
 
@@ -66,25 +66,32 @@ void infoDraw() {
     system("cls");
     printf("\n\n");
 
-
+    textcolor(PURPLE);
     gotoxy(x, y++); printf("========================= [♥조작법♥]=========================");
     // gotoxy(x, y++); printf("|															  |");
+    textcolor(WHITE);
     gotoxy(x, y++);
     gotoxy(x, y++); printf("            이동 : W, S, A, D(위, 아래, 왼쪽, 오른쪽)         ");
     gotoxy(x, y++); printf("			선택 : 스페이스바                                 ");
     gotoxy(x, y++); printf("	    스페이스바를 누르면 메인화면으로 이동합니다.		  ");
     gotoxy(x, y++);
+    textcolor(PURPLE);
     gotoxy(x, y++); printf("===============================================================");
     gotoxy(x, y++);
 
+   
     gotoxy(x, y++); printf("========================[ ♥게임 방법♥]=======================");
+    // gotoxy(x, y++); printf("|															   |");
+    textcolor(WHITE);
     gotoxy(x, y++);
     gotoxy(x, y++); printf("   		        벽에 닿으면 죽어요!   		   	              ");
     gotoxy(x, y++); printf("	             먹이 5개까지 먹으면 성공!                     ");
     gotoxy(x, y++); printf("	  스페이스바를 누르면 메인화면으로 이동합니다.	    	  ");
     gotoxy(x, y++);
+    textcolor(PURPLE);
     gotoxy(x, y++); printf("===============================================================");
-    gotoxy(x, y++); printf("ENTER를 눌러 처음화면으로 이동");
+    gotoxy(x, y++);
+    // gotoxy(x, y++); printf("		    [ Developed by : 김민서 / 고은 / 김서연 ]		   ");
 
 
 
@@ -96,10 +103,11 @@ void infoDraw() {
 }
 
 int menuDraw() {
-    textcolor(7);
     int x = 53, y = 20;
+    textcolor(WHITE);
     gotoxy(x - 2, y); printf("> 게 임 시 작");
     gotoxy(x, y + 1); printf("게 임 정 보");
+  //  gotoxy(x, y + 2); printf("게 임 종 료");
 
     while (1) {
         int n = keyControl();
@@ -115,7 +123,7 @@ int menuDraw() {
         }
 
         case DOWN: {
-            if (y < 21) {
+            if (y < 22) {
                 gotoxy(x - 2, y);
                 printf(" ");
                 gotoxy(x - 2, ++y);
@@ -132,7 +140,13 @@ int menuDraw() {
 
 }
 
-
+void gotoxy(int x, int y) {
+    HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD pos;
+    pos.X = x;
+    pos.Y = y;
+    SetConsoleCursorPosition(consoleHandle, pos);
+}
 
 //지렁이를 구현할 이중연결리스트 구조체
 #pragma pack(push,1)
@@ -156,14 +170,24 @@ typedef struct _ITEM
 }ITEM, * pITEM;
 #pragma pack(pop)
 
+//커서를 일정 좌표로 이동
+/*
+void gotoxy(int x, int y)
+{
+    COORD Pos;
+    Pos.X = x + LEFT_MARGIN;//가로세로 비율을 맞추기 위해서 가로의 좌표는 2배
+    Pos.Y = y + TOP_MARGIN;
+    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
+}
+*/
 
-//게임 실행시 프레임 출력
+//게임영역출력
 void PrintField()
 {
-    textcolor(11);
     for (int i = 1; i < FIELD_WIDTH; i++)
     {
-        gotoxy(i, 0);
+        textcolor(darkSkyBlue);
+;        gotoxy(i, 0);
         printf("─");
         gotoxy(i, FIELD_HEIGHT);
         printf("─");
@@ -187,8 +211,6 @@ void PrintField()
 }
 
 //지렁이를 늘리는 함수(이중연결리스트의 테일쪽에 노드 추가)
-// wormTailNode : 지렁이 꼬리 나타내기
-
 void AddWorm(pWORM wormTailNode)
 {
     pWORM newNode = malloc(sizeof(WORM));
@@ -230,6 +252,7 @@ void PrintWorm(pWORM wormTailNode, pWORM wormHeadNode)
     while (curr != wormHeadNode)
     {
         gotoxy(curr->x, curr->y);
+        textcolor(RED);
         printf("O");
         curr = curr->next;
     }
@@ -238,15 +261,13 @@ void PrintWorm(pWORM wormTailNode, pWORM wormHeadNode)
 //게임점수 출력
 void PrintScore(int score)
 {
-    textcolor(7);
-    gotoxy(FIELD_WIDTH + 5, 5);
+    textcolor(SkyBlue);
+    gotoxy(FIELD_WIDTH + 3, 3);
     printf("Score : %d점", score);
-    gotoxy(FIELD_WIDTH + 5, 7);
+    gotoxy(FIELD_WIDTH + 3, 5);
     printf("종료하려면 Q를 누르세요");
-    gotoxy(FIELD_WIDTH + 5, 9);
-    printf("[지렁이 이동 방법]");
-    gotoxy(FIELD_WIDTH + 5, 11);
-    printf("화살표 키를 이용하여 이동한다.");
+    gotoxy(FIELD_WIDTH + 3, 7);
+    printf("조작은 화살표키로");
 }
 
 //웜이 지나간 자리 지우기
@@ -322,6 +343,7 @@ void PrintItem(pITEM itemNode)
     while (curr != NULL)
     {
         gotoxy(curr->x, curr->y);
+        textcolor(PURPLE);
         printf("@");
         curr = curr->next;
     }
@@ -412,6 +434,20 @@ void FreeItemList(pITEM itemNode)
     }
 }
 
+//실행시 테스트용으로 만들어 놓은 아이템 생성 리스트 출력함수
+/*
+void PrintItemList(pITEM itemNode)
+{
+   pITEM curr;
+   curr = itemNode->next;
+   gotoxy( -LEFT_MARGIN, 2);
+   while (curr != NULL)
+   {
+      printf("아이템번호 : %d\n", curr->itemNo);
+      curr = curr->next;
+   }
+}
+*/
 int start()
 {
     pWORM wormHeadNode = malloc(sizeof(WORM));//이중연결리스트 헤드노드
@@ -493,48 +529,50 @@ int start()
         //웜 한칸씩 움직이기
         MoveSnake(wormTailNode, wormHeadNode);
 
-        if (score >= 600) {
-            system("cls");
-            gotoxy(FIELD_WIDTH + 5, FIELD_HEIGHT + 5);
-            printf("\n");
-            printf("		 __    _  _______  _______  ______   ___      _______  _______ \n");
-            printf("		|  |  | ||       ||       ||      | |   |    |       ||       |\n");
-            printf("		|   |_| ||   _   ||   _   ||  _    ||   |    |    ___||  _____|\n");
-            printf("		|       ||  | |  ||  | |  || | |   ||   |    |   |___ | |_____ \n");
-            printf("		|  _    ||  |_|  ||  |_|  || |_|   ||   |___ |    ___||_____  |\n");
-            printf("		| | |   ||       ||       ||       ||       ||   |___  _____| |\n");
-            printf("		|_|  |__||_______||_______||______| |_______||_______||_______|\n");
-
-            printf("		 _______  ______    _______    ______   _______  __    _  _______ \n");
-            printf("		|   _   ||    _ |  |       |  |      | |       ||  |  | ||       |\n");
-            printf("		|  |_|  ||   | ||  |    ___|  |  _    ||   _   ||   |_| ||    ___|\n");
-            printf("		|       ||   |_||_ |   |___   | | |   ||  | |  ||       ||   |___ \n");
-            printf("		|       ||    __  ||    ___|  | |_|   ||  |_|  ||  _    ||    ___|\n");
-            printf("		|   _   ||   |  | ||   |___   |       ||       || | |   ||   |___ \n");
-            printf("		|__| |__||___|  |_||_______|  |______| |_______||_|  |__||_______|\n");
-            printf("");
-            FreeWormList(wormTailNode);
-            FreeItemList(itemNode);
-            return 0;
-        }
         //벽에 부딛히면 게임오버
         if (wormHeadPointer->x == 0 || wormHeadPointer->x == FIELD_WIDTH || wormHeadPointer->y == 0 || wormHeadPointer->y == FIELD_HEIGHT)
         {
             system("cls");
             gotoxy(FIELD_WIDTH + 5, FIELD_HEIGHT + 5);
             printf("\n");
-            printf("			 _______  _______  __   __  _______    _______  __   __  _______  ______ \n");
-            printf("			|       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |\n");
-            printf("			|    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||\n");
-            printf("			|   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_\n");
-            printf("			|   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |\n");
-            printf("			|   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |\n");
-            printf("			|_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|\n");
-            printf("						벽에 부딛혔습니다.");
+            printf("          _______  _______  __   __  _______    _______  __   __  _______  ______ \n");
+            printf("         |       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |\n");
+            printf("         |    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||\n");
+            printf("         |   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_\n");
+            printf("         |   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |\n");
+            printf("         |   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |\n");
+            printf("         |_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|\n");
+            printf("                  벽에 부딛혔습니다.");
             FreeWormList(wormTailNode);
             FreeItemList(itemNode);
             return 0;
         }
+
+        if (score >= 500) {
+            system("cls");
+            gotoxy(FIELD_WIDTH + 5, FIELD_HEIGHT + 5);
+            printf("\n");
+            printf("       __    _  _______  _______  ______   ___      _______  _______ \n");
+            printf("      |  |  | ||       ||       ||      | |   |    |       ||       |\n");
+            printf("      |   |_| ||   _   ||   _   ||  _    ||   |    |    ___||  _____|\n");
+            printf("      |       ||  | |  ||  | |  || | |   ||   |    |   |___ | |_____ \n");
+            printf("      |  _    ||  |_|  ||  |_|  || |_|   ||   |___ |    ___||_____  |\n");
+            printf("      | | |   ||       ||       ||       ||       ||   |___  _____| |\n");
+            printf("      |_|  |__||_______||_______||______| |_______||_______||_______|\n");
+
+            printf("       _______  ______    _______    ______   _______  __    _  _______ \n");
+            printf("      |   _   ||    _ |  |       |  |      | |       ||  |  | ||       |\n");
+            printf("      |  |_|  ||   | ||  |    ___|  |  _    ||   _   ||   |_| ||    ___|\n");
+            printf("      |       ||   |_||_ |   |___   | | |   ||  | |  ||       ||   |___ \n");
+            printf("      |       ||    __  ||    ___|  | |_|   ||  |_|  ||  _    ||    ___|\n");
+            printf("      |   _   ||   |  | ||   |___   |       ||       || | |   ||   |___ \n");
+            printf("      |__| |__||___|  |_||_______|  |______| |_______||_|  |__||_______|\n");
+            printf("");
+            FreeWormList(wormTailNode);
+            FreeItemList(itemNode);
+            return 0;
+        }
+
 
         //아이템을 생성
         while (itemCounter < ITEM_MAX)
@@ -562,5 +600,3 @@ int start()
 
     return 0;
 }
-
-
